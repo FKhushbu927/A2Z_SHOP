@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+          
+
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="background-color: teal">
+        <h:form style="background-color: black">
+            <p:messages id="msg" closable="true" showDetail="true"></p:messages> 
+
+            <p:panelGrid columns="2" style="background-color: bisque"> 
+                
+                <h:graphicImage name = "cat.PNG" library = "images" width = "120" height = "70" >
+                        <h:outputLabel value="Category Name " />            
+                    </h:graphicImage>
+               
+
+                <p:inputText value="#{categoryMB.category.catName}" style="background:red"></p:inputText>
+
+                <h:outputLabel value="Category Description "></h:outputLabel>
+                <p:inputText value="#{categoryMB.category.catDesc}"></p:inputText>
+
+                <p:commandButton action="#{categoryMB.addCategory()}" value="save" update="msg" />
+                
+              
+
+
+            </p:panelGrid> 
+        </h:form>
+    </h:body>
+</html>
+
+  

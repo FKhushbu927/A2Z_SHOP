@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="a2z_shop"/>
+  <table-filter match-name="pro_order"/>
+  <table-filter match-name="sub_category"/>
+  <table-filter match-name="shop_user"/>
+  <table-filter match-name="category"/>
+  <table-filter match-name="pro_order_details"/>
+  <table-filter match-name="product"/>
+  <table-filter match-name="delivery_cost"/>
+  <table-filter match-name="user_role"/>
+</hibernate-reverse-engineering>

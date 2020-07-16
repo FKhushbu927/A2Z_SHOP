@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+        <title>Facelet Title</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</h:head>
+    <h:body>
+        <h:form id="form">
+            
+            <p:dataTable var="cart" value="#{shoppingCart.cart}" rows="10">
+                <f:facet name="header">
+                    <h:outputLabel value="Your Cart" />
+                </f:facet>
+                
+                <p:column headerText="Product Name">
+                    <p:outputLabel value="#{cart.p.proName}" />                    
+                </p:column>
+                
+                <p:column headerText="Quantity">
+                    <p:inputText value="#{cart.quantity}" style="width:40px" />                    
+                </p:column>
+                
+                <p:column headerText="Price">
+                    <p:outputLabel value="#{cart.p.proPrize}" />                    
+                </p:column>
+                
+                <p:column headerText="Image">
+                    <h:graphicImage name="#{cart.p.proUrl}" library="images" width="50" height="65"/>                 
+                </p:column>
+
+                <p:column headerText="Delete">
+                    <h:commandButton value="Delete" action="#{shoppingCart.removeCart(cart)}" />
+                </p:column>
+                
+                <f:facet name="footer">
+                    Total: <h:outputLabel value="#{shoppingCart.total}" />    
+                </f:facet>
+            </p:dataTable>
+            
+           <p:commandButton value="Update" action="#{shoppingCart.updateCart()}" ajax="false" />
+           <p:commandButton value="Process Cart" action="#{shoppingCart.payment()}" ajax="false" />
+           <h:outputLink value="allproduct.xhtml">CONTINUE SHOPPING </h:outputLink>
+           <!--<h:outputLink value="payment.xhtml">Process Cart </h:outputLink>-->
+                
+            
+
+        </h:form>
+    </h:body>
+</html>
+

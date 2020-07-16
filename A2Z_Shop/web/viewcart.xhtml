@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      
+          
+
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form id="form">
+            
+            <p:dataTable var="cart" value="#{cartHandlerMB.cartList}" rows="10">
+
+                <f:facet name="header"> 
+                    <h:outputLabel value="Your Cart"/>
+                </f:facet>
+
+                <p:column headerText="Product Name">
+                    <p:outputLabel value="#{cart.productname}"/>
+                </p:column>
+                
+                <p:column headerText="Quantity">
+                    <p:outputLabel value="#{cart.quantity}"/>
+                        
+                </p:column>
+                <p:column headerText="Price">
+                    <p:outputLabel value="#{cart.prize}"/>
+                </p:column>
+                
+                <p:column headerText="Total">
+                    <p:outputLabel value="#{cart.total}"/>
+                </p:column> 
+                
+            </p:dataTable>
+
+        </h:form>
+    </h:body>
+</html>
+
+
+
